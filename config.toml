@@ -1,0 +1,101 @@
+theme = "kanagawa"
+
+[editor]
+cursorline = true
+gutters = ["diff", "diagnostics", "line-numbers"]
+bufferline = "multiple"
+color-modes = true
+
+[editor.indent-guides]
+render = true
+character = "╎"
+skip-levels = 1
+
+[editor.cursor-shape]
+insert = "bar"
+normal = "block"
+
+[editor.file-picker]
+hidden = false
+
+[editor.lsp]
+display-messages = true
+
+[editor.statusline]
+left = ["mode", "spinner", "file-name", "file-type", "total-line-numbers", "file-encoding"]
+center = []
+right = ["selections", "spacer", "diagnostics", "spacer", "diagnostics", "workspace-diagnostics", "version-control"]
+
+[keys.normal]
+V = ["goto_first_nonwhitespace", "extend_to_line_end"]
+D = "kill_to_line_end"
+x = "extend_line"
+y = "yank_to_clipboard"
+p = "paste_clipboard_before"
+0 = "expand_selection"
+
+[keys.normal.m]
+e = ["ensure_selections_forward", "extend_to_line_end"]
+l = ["goto_first_nonwhitespace", "extend_to_line_end"]
+
+[keys.select]
+";" = ["collapse_selection", "normal_mode"]
+y = "yank_to_clipboard"
+p = "paste_clipboard_before"
+
+# Same behaviour as normal mode x
+x = "extend_line"
+
+# Counterpart for normal mode V
+V = "extend_to_line_end"
+
+[keys.normal.space]
+space = "file_picker"
+
+[keys.normal.space.w]
+d = "wclose"
+
+[keys.normal.space.f]
+d = ":sh zellij run -fc -- yazi"
+f = "file_picker_in_current_buffer_directory"
+g = "global_search"
+s = ":w"
+p = ":config-open"
+h = ":log-open"
+w = [
+  "move_prev_word_start",
+  "move_next_word_end",
+  "search_selection",
+  "global_search"
+]
+
+[keys.normal.space.g]
+g = ":sh zellij action new-tab -l lg"
+s = ":sh zellij run -fc -- lazygit"
+
+[keys.normal.space.c]
+f = ":format"
+a = "code_action"
+r = "rename_symbol"
+d = "diagnostics_picker"
+
+[keys.normal.space.n]
+f = ":sh zellij action new-tab -l notes"
+
+[keys.normal.space.q]
+q = ":quit"
+r = ":reload"
+
+[keys.normal.space.b]
+b = "buffer_picker"
+d = ":buffer-close"
+n = ":buffer-next"
+p = ":buffer-previous"
+s = ":new"
+
+[keys.normal.g]
+c = "toggle_comments"
+h = "hover"
+
+[keys.normal.space.t]
+v = ":tree-sitter-scopes"
