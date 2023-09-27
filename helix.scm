@@ -2,8 +2,6 @@
 (require-builtin helix/core/static as helix.static.)
 (require-builtin helix/core/keybindings as helix.keybindings.)
 
-(provide shell open-helix-scm open-init-scm reload-helix-scm)
-
 ;;@doc
 ;; Specialized shell implementation, where % is a wildcard for the current file
 (define (shell cx . args)
@@ -41,6 +39,18 @@
 (define (open-init-scm cx)
   (helix.open cx (list (helix.static.get-init-scm-path)) helix.PromptEvent::Validate))
 
+(provide shell open-helix-scm open-init-scm reload-helix-scm)
 
+;; Recent files
+(require "cogs/recentf-mode.scm")
+(provide refresh-files
+         flush-recent-files
+         recentf-snapshot
+         recentf-open-files)
   
+
+;; Notes
+(require "cogs/obsidian.scm")
+(provide find-note
+         search-in-note)
 	

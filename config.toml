@@ -70,8 +70,8 @@ w = [
 ]
 
 [keys.normal.space.g]
-g = ":sh zellij action new-tab -l lg"
-s = ":sh zellij run -fc -- lazygit"
+g = ":sh zellij action new-pane --name 'git' -c -- gex ."
+s = ":sh zellij action new-tab -l lg"
 
 [keys.normal.space.c]
 f = ":format"
