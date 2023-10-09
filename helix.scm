@@ -50,7 +50,8 @@
   
 
 ;; Notes
-(require "cogs/obsidian.scm")
+(require "cogs/logseq.scm")
 (provide find-note
-         search-in-note)
+         search-in-note
+         open-daily-note)
 	
