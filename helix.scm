@@ -1,6 +1,5 @@
 (require-builtin helix/core/typable as helix.)
 (require-builtin helix/core/static as helix.static.)
-(require-builtin helix/core/keybindings as helix.keybindings.)
 
 ;;@doc
 ;; Specialized shell implementation, where % is a wildcard for the current file
