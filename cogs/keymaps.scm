@@ -36,16 +36,16 @@
 
 ;; Marshall values in and out of keybindings, referencing the associated values
 ;; within steel
-(define/c (merge-keybindings keymap steel-key-map)
-  (->c helix.keymaps.keymap? hash? void?)
+(define (merge-keybindings keymap steel-key-map)
+  ; (->c helix.keymaps.keymap? hash? void?)
   (helix.keymaps.helix-merge-keybindings
    keymap
    (~> steel-key-map (value->jsexpr-string) (helix.keymaps.helix-string->keymap))))
 
 ;;@doc
 ;; Check that the types on this map check out, otherwise we don't need to consistently do these checks
-(define/c (set-global-buffer-or-extension-keymap map)
-  (->c (hashof string? helix.keymaps.keymap?) void?)
+(define (set-global-buffer-or-extension-keymap map)
+  ; (->c (hashof string? helix.keymaps.keymap?) void?)
   (*keybinding-map-set!* map))
 
 ;;@doc
