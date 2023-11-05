@@ -1,7 +1,3 @@
-(require "steel/contracts/contract.scm"
-         (for-syntax "steel/contracts/contract.scm")
-         "steel/contracts/types.scm")
-
 (require "steel/result")
 
 (provide apply-options)

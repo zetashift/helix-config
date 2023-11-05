@@ -1,6 +1,3 @@
-(require "../prelude.scm"
-         (for-syntax "../prelude.scm"))
-
 (require-helix)
 
 (provide refresh-files

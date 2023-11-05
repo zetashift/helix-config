@@ -1,9 +1,5 @@
 (require-builtin helix/core/keymaps as helix.keymaps.)
 
-(require "steel/contracts/contract.scm"
-         (for-syntax "steel/contracts/contract.scm")
-         "steel/contracts/types.scm")
-
 (provide *keybinding-map-set!*
          *keybinding-map-insert*
          *get-buffer-or-extension-keybindings*
