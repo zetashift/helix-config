@@ -5,6 +5,7 @@ cursorline = true
 gutters = ["diff", "diagnostics", "line-numbers"]
 bufferline = "multiple"
 color-modes = true
+idle-timeout = 100
 
 [editor.indent-guides]
 render = true

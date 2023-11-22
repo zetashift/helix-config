@@ -26,3 +26,14 @@
     (hash
     "s"
     ":search-in-note")))))
+
+(add-global-keybinding
+ (hash
+  "normal"
+  (hash
+   "space"
+   (hash "n"
+    (hash
+    "d"
+    ":open-daily-note")))))
+ 

@@ -9,7 +9,7 @@
     (set-piped-stdout! command)
     command)
 
-  (~> (command "fish" (list "-c" (string-append "date +'%Y_%m_%d'")))
+  (~> (command "fish" (list "-c" (string-append "date +'%Y-%m-%d'")))
       (with-stdout-piped)
       (spawn-process)
       (Ok->value)
@@ -30,7 +30,7 @@
       (Ok->value)
       (trim)))
 
-(define VAULT (expand-path "~/vaults/selfy"))
+(define VAULT (expand-path "~/vaults/self"))
 
 ;;@doc
 ;; Searches through `VAULT` for a note using a Picker.
@@ -45,7 +45,7 @@
 ;;@doc
 ;; Opens the daily note in your vault
 (define (open-daily-note cx)
-  (helix.open cx (list (string-append VAULT "/journals/" (get-current-date) ".md")) helix.PromptEvent::Validate))
+  (helix.open cx (list (string-append VAULT "/My Day/" (get-current-date) ".md")) helix.PromptEvent::Validate))
 
 (provide find-note
          ; create-note
