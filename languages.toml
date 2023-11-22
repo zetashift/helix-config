@@ -10,46 +10,45 @@ args = ["localhost", "5757"]
 command = "tailwindcss-language-server"
 args = ["--stdio"]
 
-# ------- svelte -----------
-[language-server.svelteserver.config.configuration.typescript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-[language-server.svelteserver.config.configuration.javascript]
-inlayHints.parameterTypes.enabled = true
-inlayHints.variableTypes.enabled = true
-inlayHints.propertyDeclarationTypes.enabled = true
-inlayHints.functionLikeReturnTypes.enabled = true
-inlayHints.enumMemberValues.enabled = true
-inlayHints.parameterNames.enabled = "all"
-
-
+# Elixir using NextLS
 [[language]]
-name = "svelte"
-roots = ["package.json"]
-language-servers = ["svelteserver"]
+name = "elixir"
+scope = "source.elixir"
+language-servers = ["nextls"]
+
+[language-server.nextls]
+command = "nextls"
+args = ["--stdio=true"]
 
 [[language]]
 name = "css"
 language-servers = [ "vscode-css-language-server", "tailwindcss-language-server" ]
+formatter = { command = "prettier", args = ["--parser", "css"] }
 
 [[language]]
 name = "html"
 language-servers = [ "vscode-html-language-server", "tailwindcss-language-server", "emmet-ls" ]
+formatter = { command = "prettier", args = ["--parser", "html"] }
 
 [[language]]
 name = "tsx"
 language-servers = ["typescript-language-server", "tailwindcss-language-server" ]
+formatter = { command = "prettier", args = ["--parser", "typescript"] }
 
 [[language]]
 name = "jsx"
 language-servers = [ "typescript-language-server", "tailwindcss-language-server" ]
+formatter = { command = "prettier" }
 
 [[language]]
 name = "typescript"
 formatter = { command = "prettier", args = ["--parser", "typescript"] }
 
+[language-server.astro-ls]
+command = "astro-ls"
+args = ["--stdio"]
+config = {typescript = {tsdk = ""}, environment = "node"}
+
+[[language]]
+name = "astro"
+language-servers = [ "astro-ls" ]
